@@ -1,0 +1,54 @@
+inherited MainFormExChange_LgXhdpiPh: TMainFormExChange_LgXhdpiPh
+  ClientHeight = 696
+  ClientWidth = 448
+  DesignerMasterStyle = 0
+  inherited Ok: TButton
+    Position.X = 336.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 104.000000000000000000
+    Size.Height = 41.000000000000000000
+  end
+  inherited ComboBoxFromCurenc: TComboBox
+    Position.X = 8.000000000000000000
+    Position.Y = 52.000000000000000000
+    Size.Width = 137.000000000000000000
+  end
+  inherited ComboBoxToCurenc: TComboBox
+    Position.Y = 128.000000000000000000
+  end
+  inherited EditAmountFrom: TEdit
+    Position.Y = 52.000000000000000000
+  end
+  inherited EditAmountTo: TEdit
+    Position.X = 176.000000000000000000
+    Position.Y = 128.000000000000000000
+  end
+  inherited Grid1: TGrid
+    Position.Y = 184.000000000000000000
+    Size.Width = 448.000000000000000000
+    Size.Height = 512.000000000000000000
+    Viewport.Width = 448.000000000000000000
+    Viewport.Height = 512.000000000000000000
+  end
+  inherited LabelCurencFrom: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 20.000000000000000000
+  end
+  inherited LabelCurencTo: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 97.000000000000000000
+  end
+  inherited LabelAmountFrom: TLabel
+    Position.X = 176.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 129.000000000000000000
+  end
+  inherited LabelAmountTo: TLabel
+    Position.X = 176.000000000000000000
+    Position.Y = 97.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 23.000000000000000000
+  end
+end

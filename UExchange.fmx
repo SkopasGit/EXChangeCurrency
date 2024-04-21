@@ -1,0 +1,181 @@
+object MainFormExChange: TMainFormExChange
+  Left = 0
+  Top = 0
+  Border.Styling = False
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = Single
+  Caption = 'Exchange Rates'
+  ClientHeight = 484
+  ClientWidth = 384
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Orientations = [Portrait]
+  FormFactor.Devices = [Desktop, iPhone]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object Ok: TButton
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 289.000000000000000000
+    Position.Y = 65.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Ok'
+    OnClick = ButtonGetClick
+  end
+  object ComboBoxFromCurenc: TComboBox
+    Position.X = 16.000000000000000000
+    Position.Y = 41.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+  end
+  object ComboBoxToCurenc: TComboBox
+    Position.X = 16.000000000000000000
+    Position.Y = 120.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+  end
+  object EditAmountFrom: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    KeyboardType = NumberPad
+    Position.X = 168.000000000000000000
+    Position.Y = 41.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object EditAmountTo: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Position.X = 168.000000000000000000
+    Position.Y = 120.000000000000000000
+    Enabled = False
+    Size.Width = 81.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Grid1: TGrid
+    Align = MostBottom
+    CanFocus = True
+    ClipChildren = True
+    Position.Y = 184.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 300.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Family, Style, FontColor]
+    TabOrder = 7
+    Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
+    Viewport.Width = 380.000000000000000000
+    Viewport.Height = 275.000000000000000000
+  end
+  object LabelCurencFrom: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 82.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'CurencFrom'
+    TabOrder = 13
+  end
+  object LabelCurencTo: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 16.000000000000000000
+    Position.Y = 99.000000000000000000
+    Size.Width = 82.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'CurencTo'
+    TabOrder = 12
+  end
+  object LabelAmountFrom: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 168.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'AmountFrom'
+    TabOrder = 11
+  end
+  object LabelAmountTo: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 168.000000000000000000
+    Position.Y = 99.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'AmountTo'
+    TabOrder = 10
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = DMExCh.FDQueryEXCh
+    ScopeMappings = <>
+    Left = 168
+    Top = 224
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 316
+    Top = 189
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid1
+      Columns = <
+        item
+          MemberName = 'ID'
+          Visible = False
+        end
+        item
+          MemberName = 'timestamp'
+          ReadOnly = True
+          Header = 'Date'
+          TextWidth = 20
+        end
+        item
+          MemberName = 'CurrencyFromN'
+          ReadOnly = True
+          Header = 'CFrom'
+          TextWidth = 5
+        end
+        item
+          MemberName = 'CurrencyTo'
+          ReadOnly = True
+          Header = 'CTo'
+          TextWidth = 5
+        end
+        item
+          MemberName = 'CurrencyFromRate'
+          ReadOnly = True
+          Visible = False
+        end
+        item
+          MemberName = 'CurrencyToRate'
+          ReadOnly = True
+          Visible = False
+        end
+        item
+          MemberName = 'AmountFrom'
+          ReadOnly = True
+          Header = 'AFrom'
+          TextWidth = 10
+        end
+        item
+          MemberName = 'AmountTo'
+          ReadOnly = True
+          Header = 'ATo'
+          TextWidth = 10
+        end>
+    end
+  end
+end
